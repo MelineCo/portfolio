@@ -5,11 +5,172 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Portfolio</title>
 </head>
-<body>
-    <h1 class="heading-primary">Hey, I'm Emeline Courcelle</h1>
-    <p class="text-primary">A junior front-end web developper based in the Drôme hills, France.</p>
+<body class="dark">
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img class="header_logo-img" src="images/photo-profil - carre - petit.jpg" alt="Emeline Courcelle">
+            </div>
+            <div class="left_menu">
+                <ul class="links">
+                    <li><a href="hero">Home</a></li>
+                    <li><a href="about">About</a></li>
+                    <li><a href="projects">Projects</a></li>
+                </ul>
+                <a href="#" class="action_btn">Contact me</a>
+                <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
+                <div class="theme-toggle-btn dark">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="dropdown_menu open">
+            <ul class="links">
+                <li><a href="hero">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="projects">Projects</a></li>
+                <li><a href="#" class="action_btn">Contact me</a></li>
+            </ul>
+        </div>
+
+        <script>
+            // dropdown menu
+            const toggleBtn = document.querySelector('.toggle_btn')
+            const toggleBtnIcon = document.querySelector('.toggle_btn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu')
+
+            toggleBtn.onclick = function () {
+                dropDownMenu.classList.toggle('open')
+                const isOpen = dropDownMenu.classList.contains('open')
+
+                toggleBtnIcon.classList = isOpen
+                    ? 'fa-solid fa-xmark'
+                    : 'fa-solid fa-bars'
+            }
+
+            // dark mode
+            const toggleDarkBtn = document.querySelector('.theme-toggle-btn')
+            const body = document.querySelector('body')
+            const toggleDarkBtnIcon = document.querySelector('.theme-toggle-btn i')
+
+            toggleDarkBtn.addEventListener('click', function () {
+                toggleDarkBtn.classList.toggle('dark')
+                body.classList.toggle('dark')
+
+                const isDark = toggleDarkBtn.classList.contains('dark')
+
+                toggleDarkBtnIcon.classList = isDark
+                    ? 'fas fa-sun'
+                    : 'fas fa-moon'
+            })
+                
+        </script>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="info">
+                <h1 class="hero-primary">Hey, I'm <span>Emeline Courcelle &#x1F44B;</span></h1>
+                <p class="text-primary">A junior front-end web developper based in the Drôme hills, France.
+                <br>I’m currently looking to join a team of creative designers and developers.
+                <br>If you think we might be a good fit for one another,
+                <br> send me a message. </p>
+                <div class="hero_btn">
+                    <button class="dl_cv">Download CV</button>
+                    <button class="email"><a href="mailto:emeline.courcelle@gmail.com">Let's talk &#x1F4AC;</a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <span>About me section</span>
+        <h2>What's my journey?</h2>
+        <p>Eternal apprentice, I love to learn new stuff.</p>
+        <p>Leisure: I sew cool accessories & clothes for my boy.</p>
+        <p>Fun fact: I'm trained in naturopathy & food profiling.</p>
+        <p>Location: somewhere in Drôme.</p>
+        <p>I acquirred soft skills in my previous job working as a data analyst. I used to develop VBA programs to automate all of my reportings.
+            Au fur et à mesure que je prenais de plus en plus de plaisir à créer et automatiser de beaux dashboards, ...
+            But I wanted to go further pour créer de belles applications fonctionnelles.
+            C'est pourquoi je me forme au développement web grâce à Codecademy (online courses).
+            I want to become a software developper. I'm eager to learn, improve and create beautiful and functionnal applications.
+
+            When I am not coding, I read books on health, I sew cool stuff or I learn new skills.
+            The websites I spend most of my time are Skillshare, Domestika, Udemy & Codecademy.
+        </p>
+    </section>
+
+    <section id="projects" class="projects">
+        <span>Portfolio</span>
+        <h2>Some of my latest work</h2>
+        <div class="container">
+            <div class="left project">
+                <div class="sub-container">
+                    <h3>Portfolio</h3>
+                    <img class="project-picture" src="images/the-pho-spoon.png" alt="portfolio homepage">
+                    <p>A Codecademy project to use my knowledge of web development and establish my own web presence</p>
+                    <button>Discover</button>
+                </div>
+            </div>
+            <div class="center project">
+                <div class="sub-container">
+                    <h3>Responsive Club website</h3>
+                    <img class="project-picture" src="images/Sewing-club.png" alt="sewing club swebsie homepage">
+                    <p>A Codecademy project to test my responsive web design knowledge.</p>
+                    <button>Discover</button>
+                </div>
+            </div>
+            <div class="right project">
+                <div class="sub-container">
+                    <h3>Restaurant homepage</h3>
+                    <img class="project-picture" src="images/the-pho-spoon.png" alt="restaurant homepage project homepage">
+                    <p>A Codecademy project to test my flexbox knowledge.</p>
+                    <button>Discover</button>
+                </div>
+            </div>
+        </div>
+    </section>
     
+    <section id="tooling" class="tooling">
+        <h2>Tooling</h2>
+        <div class="container">
+            <div class="box-content">
+                <div class="box-icon"><i class="fa-brands fa-html5"></i></div>
+                <div class="box-text"><p>HTML5</p></div>
+            </div>
+            <div class="box-content">
+                <div class="box-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                <div class="box-text"><p>CCS3</p></div>
+            </div>
+            <div class="box-content">
+                <div class="box-icon"><i class="fa-brands fa-square-js"></i></div>
+                <div class="box-text"><p>Javascript</p></div>
+            </div>
+            <div class="box-content">
+                <div class="box-icon"><i class="fa-brands fa-angular"></i></div>
+                <div class="box-text"><p>Angular</p></div>
+            </div>
+            <div class="box-content">
+                <div class="box-icon"><i class="fa-brands fa-figma"></i></div>
+                <div class="box-text"><p>Figma</p></div>
+            </div>
+            <div class="box-content">
+                <div class="box-icon"><i class="fa-brands fa-react"></i></div>
+                <div class="box-text"><p>React</p></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Built with &#x1F36A;. © Copyright 2023 Emeline Courcelle. All rights reserved.</p>
+    </footer>
 </body>
 </html>
