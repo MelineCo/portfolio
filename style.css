@@ -44,6 +44,7 @@ h1 {
 
 h2 {
     font-family: 'Libre Caslon Text';
+    margin-bottom: 30px;
 }
 
 h3 {
@@ -199,6 +200,9 @@ header {
     margin-bottom: 1.5rem;
     font-family: 'Source Sans Pro', sans-serif;
 }
+.contact label {
+    border-bottom: 1px solid black;
+}
 .contact-btn {
     width: 30%;
     padding: 2rem 4rem;
@@ -338,8 +342,23 @@ scale: 0.95;
 /* ABOUT */
 
 .about  {
-    max-width: 60%;
+    max-width: 45%;
     margin-left: 10%;
+}
+
+.about p,
+.about ul {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.about li {
+    list-style: "\2728  ";
+}
+
+.sparkles {
+    padding-left: 40px;
 }
 
 /* PROJECTS */
